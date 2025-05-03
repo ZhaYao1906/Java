@@ -264,7 +264,7 @@ Tomcat中，实现了一套自定义的类加载器
 
 默认配置在catalina.properties文件中。**这个类加载器不会自动创建的，得你在相应位置去配置。**
 
-catalina类加载器默认是不创建出来的**，server.loader = 默认配置为空**，为空时catalina加载器和common加载器是同一个，如果不为空的话，则会创建出catalina类加载器，将来会去加载这个目录下对应的jar包。  
+catalina类加载器默认是不创建出来的,**server.loader = 默认配置为空**，为空时catalina加载器和common加载器是同一个，如果不为空的话，则会创建出catalina类加载器，将来会去加载这个目录下对应的jar包。  
 
 3、**shared 类加载器** 主要加载应用使用的jar包，不让tomcat使用，默认配置在catalina.properties文件中。这个和catalina类加载器一样的，**不会自动创建，得你主动在相应位置上去配置。**
 

@@ -67,7 +67,7 @@ SpringBoot加载配置类的方式：
 
 ## 2.3 SpringBoot自动配置原理
 
-Auto-Configuration:基于引入的依赖jar包，对 SpringBoot 应用进行自动配置。为SpringBoo**t“开箱即用**”提供了基础支撑。
+Auto-Configuration:基于引入的依赖jar包，对 SpringBoot 应用进行自动配置。为SpringBoot **“开箱即用**”提供了基础支撑。
 
 注：这里很容易将自动装配与自动配置搞混，自动配置：Auto-Configuration  自动装配：Autowire
 
@@ -77,7 +77,7 @@ Auto-Configuration:基于引入的依赖jar包，对 SpringBoot 应用进行自�
 
 **1、自动配置的入口：**@EnableAutoConfiguration 注解启动，因为 **@SpringBootApplication** 是一个复合注解，包含了 @EnableAutoConfiguration。
 
-**2、自动配置类的加载：**Spring Boot 在启动时会去 **依赖的 Starter 包中** 寻找 resources/META-INF**/spring.factories** 文件**（文件中定义了自动配置类的全限定名，Spring Boot 启动时会加载这些类。）**，然后根据**文件中配置的 Jar 包**去扫描项目所依赖的 Jar 包。
+**2、自动配置类的加载：** Spring Boot 在启动时会去 **依赖的 Starter 包中** 寻找 resources/META-INF **/spring.factories** 文件 **（文件中定义了自动配置类的全限定名，Spring Boot 启动时会加载这些类。）**，然后根据 **文件中配置的 Jar 包**去扫描项目所依赖的 Jar 包。
 
 ---
 
@@ -87,7 +87,7 @@ spring.factories是SpringBoot SPI机制实现的核心，SPI机制表示扩展�
 
 ---
 
-**3、条件化配置：**根据 **@Conditional 注解**的条件，**过滤掉不必要的自动配置类**，进行自动配置并将 Bean 注入 Spring Context 。
+**3、条件化配置：** 根据 **@Conditional 注解**的条件，**过滤掉不必要的自动配置类**，进行自动配置并将 Bean 注入 Spring Context 。
 
 ---
 
@@ -103,9 +103,9 @@ spring.factories是SpringBoot SPI机制实现的核心，SPI机制表示扩展�
 
 ---
 
-**4、配置属性绑定：**Spring Boot 使用 @ConfigurationProperties 注解将配置文件中的属性绑定到 Java 类中。
+**4、配置属性绑定：** Spring Boot 使用 @ConfigurationProperties 注解将配置文件中的属性绑定到 Java 类中。
 
-**5、自动配置的加载顺序：**Spring Boot 会按照 **spring.factories 或 AutoConfiguration.imports 文件中定义的顺序加载配置类**，加载顺序会影响 Bean 的优先级
+**5、自动配置的加载顺序：** Spring Boot 会按照 **spring.factories 或 AutoConfiguration.imports 文件中定义的顺序加载配置类**，加载顺序会影响 Bean 的优先级
 
 其实就是 Spring Boot 在启动的时候，按照约定去**读取 Spring Boot Starter 的配置信息**，再根据配置信息**对资源进行初始化**，并注入到 Spring 容器中。这样 Spring Boot 启动完毕后，就已经准备好了一切资源，使用过程中直接注入对应 Bean 资源即可。
 
@@ -140,7 +140,9 @@ spring.factories是SpringBoot SPI机制实现的核心，SPI机制表示扩展�
 **@RequestParam** : 将请求参数绑定到控制器的方法参数上（是SpringMVC中接收普通参数的注解）
 
 1. 语法：**@RequestParam(value=”参数名”,required=”true/false”,defaultValue=””)**
+
 2. required：是否包含该参数，默认为true，表示该请求路径中必须包含该参数，如果不包含就报错。
+
 3. defaultValue：默认参数值，如果设置了该值，required=true将失效，自动为false,如果没有传该参数，就使用默认值。
 
 **@PathVariable ：** 接收请求路径中占位符的值。
@@ -155,7 +157,7 @@ spring.factories是SpringBoot SPI机制实现的核心，SPI机制表示扩展�
 
 ## **2.5 常见的启动器（starter）**
 
-SpringBoot的Starter机制：Starter其实没东西，就是一组【**预配置的依赖项集合】**，用于启用特定类型的功能。构建项目时，只需要引入这个Starter，而无需单独处理每个依赖项的版本和配置。
+SpringBoot的Starter机制：Starter其实没东西，就是一组 **【预配置的依赖项集合】**，用于启用特定类型的功能。构建项目时，只需要引入这个Starter，而无需单独处理每个依赖项的版本和配置。
 
 ### spring-boot-starter-web
 
@@ -179,7 +181,7 @@ SpringBoot 默认使用CGLib动态代理。主要考虑到：1、性能和速度
 
 ### 2、策略模式
 
-Spring AOP支持JDK和CGLib两种动态代理实现方式，**通过策略接口实现不同的策略类，**运行时动态选择，其创建一般通过工厂方法实现。
+Spring AOP支持JDK和CGLib两种动态代理实现方式，**通过策略接口实现不同的策略类，** 运行时动态选择，其创建一般通过工厂方法实现。
 
 ### 3、装饰器模式
 
@@ -203,7 +205,7 @@ Spring MVC中**针对不同方式定义的Controller，利用适配器模式统�
 
 # 4  Spring Boot中“约定大于配置”
 
-通过约定好的方式来提供默认行为**（通过减少配置和提供合理的默认值，使得开发者可以快速地构建和部署应用程序）**，减少开发者需要做出的决策。
+通过约定好的方式来提供默认行为 **（通过减少配置和提供合理的默认值，使得开发者可以快速地构建和部署应用程序）**，减少开发者需要做出的决策。
 
 **自动化配置**：Spring Boot根据项目的依赖和环境自动配置应用程序，无需手动配置大量的XML和Java配置文件。
 

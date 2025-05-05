@@ -2,7 +2,7 @@
 
 # 1、Spring基本概念
 
-一般说的**Spring框架**指的都是**Spring Framework,**它是很多模块的集合，**Spring支持Ioc和Aop。**是一款开源的轻量级Java开发框架，旨在提高开发人员的开发效率以及系统的可维护性。可以方便的对数据库进行访问，集成第三方组件。
+一般说的**Spring框架**指的都是**Spring Framework,** 它是很多模块的集合，**Spring支持Ioc和Aop。** 是一款开源的轻量级Java开发框架，旨在提高开发人员的开发效率以及系统的可维护性。可以方便的对数据库进行访问，集成第三方组件。
 
 **Spring各个模块的依赖如下：**
 
@@ -10,11 +10,11 @@
 
 - **Spring Core 核心模块**
 
-Spring 框架的基础，提供了**依赖注入（DI）和 控制反转（IoC）**的功能。它通过 BeanFactory 和 ApplicationContext 管理对象的生命周期和依赖关系。
+Spring 框架的基础，提供了**依赖注入（DI）和 控制反转（IoC）** 的功能。它通过 BeanFactory 和 ApplicationContext 管理对象的生命周期和依赖关系。
 
 - **Spring Context（上下文模块）**
 
-**扩展了 BeanFactory 的功能，**提供了更高级的容器功能，如国际化支持、事件传播、资源加载等。
+**扩展了 BeanFactory 的功能，** 提供了更高级的容器功能，如国际化支持、事件传播、资源加载等。
 
 - **Spring AOP（面向切面编程模块）**
 
@@ -32,11 +32,11 @@ Spring 框架的基础，提供了**依赖注入（DI）和 控制反转（IoC�
 
 Spring包含了多个功能模块，最重要的是Spring-Core(主要提供IoC依赖注入功能)模块，Spring其他模块（SpringMVC）都依赖与Spring-Core。使用依赖注入实现控制反转，可以很方便的整合各种框架。
 
-**Spring MVC是Spring中很重要的一个模块，**主要赋予 Spring **快速构建 MVC 架构的 Web 程序**的能力。**MVC 是模型(Model)、视图(View)、控制器(Controller)的简写**，其核心思想是通过将业务逻辑、数据、显示分离来组织代码。
+**Spring MVC是Spring中很重要的一个模块，** 主要赋予 Spring **快速构建 MVC 架构的 Web 程序**的能力。**MVC 是模型(Model)、视图(View)、控制器(Controller)的简写**，其核心思想是通过将业务逻辑、数据、显示分离来组织代码。
 
 ![image.png](Spring%20101e74500164808292f0d49a46528c08/image%201.png)
 
-Spring Boot：简化Spring开发**（减少配置文件，开箱即用！！！）只是简化了配置。**如果需要构建MVC架构的Web程序，还是需要Spring MVC框架。SpringBoot只能简化配置。整合了一系列解决方案（starter机制）。
+Spring Boot：简化Spring开发 **（减少配置文件，开箱即用！！！）只是简化了配置。** 如果需要构建MVC架构的Web程序，还是需要Spring MVC框架。SpringBoot只能简化配置。整合了一系列解决方案（starter机制）。
 
 # 2. Spring IOC
 
@@ -64,7 +64,7 @@ Spring Boot：简化Spring开发**（减少配置文件，开箱即用！！！�
 
 Bean 代指的就是那些 **被 IoC 容器所管理的对象**。告诉 IoC 容器帮助我们管理哪些对象，这个是通过配置元数据来定义的。Bean 是 Spring 应用程序的基本构建块，几乎所有核心功能都依赖于 Bean。
 
-配置元数据可以是 **XML 文件**、**注解（最常用！！！）**或者 **Java 配置类。**
+配置元数据可以是 **XML 文件**、**注解（最常用！！！）** 或者 **Java 配置类。**
 
 ### 2.1.1一个类声明为Bean的注解
 
@@ -80,7 +80,7 @@ Bean 代指的就是那些 **被 IoC 容器所管理的对象**。告诉 IoC 容
 
 - **@Component 和@Bean的区别？**
 
-**`@Component` 注解作用于类，而`@Bean`注解作用于方法。**`@Bean` 注解比 `@Component` 注解的自定义性更强，而且很多地方我们只能通过 `@Bean` 注解来注册 bean。
+**`@Component` 注解作用于类，而`@Bean`注解作用于方法。** `@Bean` 注解比 `@Component` 注解的自定义性更强，而且很多地方我们只能通过 `@Bean` 注解来注册 bean。
 `@Bean`注解使用示例。
 
 ```java
@@ -100,7 +100,7 @@ Spring 内置的 `@Autowired` 以及 JDK 内置的 `@Resource` 和 `@Inject
 
 **存在问题**
 
- 当一个接口 **存在多个实现类的话，**`byType` 这种方式就 **无法正确注入对象了**，因为这个时候 Spring 会同时找到多个满足条件的选择，默认情况下它自己不知道选择哪一个。**这种情况下，注入方式会变为 `byName`（根据名称进行匹配），这个名称通常就是类名（首字母小写）**
+ 当一个接口 **存在多个实现类的话，** `byType` 这种方式就 **无法正确注入对象了**，因为这个时候 Spring 会同时找到多个满足条件的选择，默认情况下它自己不知道选择哪一个。**这种情况下，注入方式会变为 `byName`（根据名称进行匹配），这个名称通常就是类名（首字母小写）**
 
 ### @Autowired 和 @Resource 的区别
 
@@ -148,7 +148,7 @@ private SmsService smsService;
 
 依赖注入 (Dependency Injection, DI) 的常见方式：
 
-- **构造函数注入：**通过类的构造函数来注入依赖项。
+- **构造函数注入：** 通过类的构造函数来注入依赖项。
 
 ```java
 @Service
@@ -164,7 +164,7 @@ public class UserService {
 }
 ```
 
-- **Setter 注入：**通过**类的 Setter 方法(构造方法)**来注入依赖项。
+- **Setter 注入：** 通过 **类的 Setter 方法(构造方法)** 来注入依赖项。
 
 ```java
 @Service
@@ -182,12 +182,12 @@ public class UserService {
 }
 ```
 
-- **Field（字段） 注入：**直接在类的字段上使用注解（如 `@Autowired` 或 `@Resource`）来注入依赖项。
+- **Field（字段） 注入：** 直接在类的字段上使用注解（如 `@Autowired` 或 `@Resource`）来注入依赖项。
 
 ### 2.1.4 Bean是线程安全的吗？（考过）
 
 Spring 框架中的 Bean 是否线程安全，**取决于其作用域和状态。**
-大部分 Bean 实际都是**无状态（没有定义可变的成员变量）**的（比如 Dao、Service），这种情况下， **Bean 是线程安全的。**
+大部分 Bean 实际都是 **无状态（没有定义可变的成员变量）** 的（比如 Dao、Service），这种情况下， **Bean 是线程安全的。**
 
 **有状态的Bean存在线程安全问题**
 
@@ -233,8 +233,8 @@ Spring 在创建一个Bean对象时，会先创建出来一个Java对象，会�
 
 Spring Ioc容器中，支持多种其他作用域的Bean：
 
-- **Singleton（单例）：默认作用域，单例Bean 。**容器中只有一个 Bean 实例。
-- **Prototype（原型）：**每次请求时都会创建一个新的 Bean 实例。
+- **Singleton（单例）：默认作用域，单例Bean 。** 容器中只有一个 Bean 实例。
+- **Prototype（原型）：** 每次请求时都会创建一个新的 Bean 实例。
 - Request：每个 HTTP 请求创建一个 Bean 实例（仅适用于 Web 应用）。
 - Session：每个 HTTP 会话创建一个 Bean 实例（仅适用于 Web 应用）。
 - Application：每个 ServletContext 生命周期内创建一个 Bean 实例（仅适用于 Web 应用）。
@@ -244,13 +244,13 @@ Spring Ioc容器中，支持多种其他作用域的Bean：
 
 是的
 
-单例模式是指在一个JVM中，**一个类只能构造出一个对象**。Spring中的单例Bean也是一种单例模式**，只不过范围比较小，范围是beanName**,一个beanName对应同一个Bean对象，不同的beanName可以对应不同的Bean对象。
+单例模式是指在一个JVM中，**一个类只能构造出一个对象**。Spring中的单例Bean也是一种单例模式 **，只不过范围比较小，范围是beanName**,一个beanName对应同一个Bean对象，不同的beanName可以对应不同的Bean对象。
 
 ## 2.2 依赖注入 DI
 
 ### 定义
 
-依赖：**一个对象 需要 另一个对象来完成其功能。**例如，UserService 依赖于 UserRepository 来访问数据库。
+依赖：**一个对象 需要 另一个对象来完成其功能。** 例如，UserService 依赖于 UserRepository 来访问数据库。
 
 注入：**将依赖对象（如 UserRepository）通过某种方式传递给需要它的对象（如 UserService）**，而不是由需要依赖的对象自己创建或查找依赖。
 
@@ -325,9 +325,9 @@ Bean的创建过程中有一个步骤可以对Bean进行扩展实现，AOP本身
 
 2、定义切点：使用 **@Pointcut 注解**定义切点表达式，**匹配需要拦截的连接点。**
 
-3、创建代理对象：Spring 容器在启动时，会扫描所有 Bean，**并根据切点表达式匹配目标对象。如果目标对象符合切点表达式，Spring会为其创建代理对象。**通过JDK或者CGLIB的方式来生成代理对象在执行方法调用的时候，会调用到生成的字节码文件中，直接回找到DynamicAdvisored-Interceptor类中的intercept方法，从此方法开始执行
+3、创建代理对象：Spring 容器在启动时，会扫描所有 Bean，**并根据切点表达式匹配目标对象。如果目标对象符合切点表达式，Spring会为其创建代理对象。** 通过JDK或者CGLIB的方式来生成代理对象在执行方法调用的时候，会调用到生成的字节码文件中，直接回找到DynamicAdvisored-Interceptor类中的intercept方法，从此方法开始执行
 
-4、**执行通知：**根据之前定义好的**通知**来**生成拦截器链，**从拦截器链中依次获取每一个通知开始进行执行，在执行过程中，为了方便找到下一个通知是哪个，会有一个InvocationInterceptor的对象，找的时候是从-1的位置一次开始查找并且执行的。
+4、**执行通知：** 根据之前定义好的**通知**来 **生成拦截器链，** 从拦截器链中依次获取每一个通知开始进行执行，在执行过程中，为了方便找到下一个通知是哪个，会有一个InvocationInterceptor的对象，找的时候是从-1的位置一次开始查找并且执行的。
 
 ![image.png](Spring%20101e74500164808292f0d49a46528c08/image%204.png)
 
@@ -493,7 +493,7 @@ public class AopTest {
 
 通过注解和AOP都可以实现函数耗时统计功能，但两者在实现方式和适用场景上有显著差异。
 
-**AOP实现通常是更优的选择，因为它提供了更好的可维护性和扩展性。**而对于小型工具类或性能敏感的场景，简单的注解实现可能更为合适。
+**AOP实现通常是更优的选择，因为它提供了更好的可维护性和扩展性。** 而对于小型工具类或性能敏感的场景，简单的注解实现可能更为合适。
 
 ![image.png](Spring%20101e74500164808292f0d49a46528c08/image%205.png)
 
@@ -557,6 +557,7 @@ private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>(1
 **一级缓存（singletonObjects）**：**存放最终形态的 Bean（已经实例化、属性填充、初始化）**，单例池，为“Spring 的单例属性”⽽⽣。一般情况我们获取 Bean 都是从这里获取的，但是并不是所有的 Bean 都在单例池里面，例如原型 Bean 就不在里面。
 
 **二级缓存（earlySingletonObjects）**：**存放过渡 Bean（半成品，尚未属性填充）**，也就是三级缓存中`ObjectFactory`产生的对象，与三级缓存配合使用的，可以防止 AOP 的情况下，每次调用`ObjectFactory#getObject()`都是会产生新的代理对象的。
+
 **三级缓存（singletonFactories）**：**存放`ObjectFactory` 对象工厂**， `ObjectFactory`的`getObject()`方法（最终调用的是`getEarlyBeanReference()`方法）可以生成原始 Bean 对象或者代理对象（如果 Bean 被 AOP 切面代理）。**三级缓存只会对单例 Bean 生效。**
 
 ![image.png](Spring%20101e74500164808292f0d49a46528c08/image%206.png)
@@ -565,14 +566,16 @@ private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>(1
 
 **Spring 创建 Bean 的流程:**
 1.  先去 **一级缓存 `singletonObjects`** 中获取，存在就返回；
+
 2.  如果不存在或者对象正在创建中，于是去 **二级缓存 `earlySingletonObjects`** 中获取；
 
-1. 如果还没有获取到，就去 **三级缓存 `singletonFactories`** 中获取，通过执行 `Object-Facotry` 的 `getObject()` 就可以获取该对象，获取成功之后，从三级缓存移除，并将该对象加入到二级缓存中。
+3. 如果还没有获取到，就去 **三级缓存 `singletonFactories`** 中获取，通过执行 `Object-Facotry` 的 `getObject()` 就可以获取该对象，获取成功之后，从三级缓存移除，并将该对象加入到二级缓存中。
 
 ---
 
 解决循环依赖的流程如下：
 1、 当 Spring 创建 A 之后，发现 A 依赖了 B ，又去创建 B，B 依赖了 A ，又去创建 A；
+
 2、 在 B 创建 A 的时候，那么此时 A 就发生了循环依赖，由于 A 此时还没有初始化完成，因此在 **一二级缓存** 中肯定没有 A；
 
 ![创建B时，B依赖于A，而A对象又没创建完成](Spring%20101e74500164808292f0d49a46528c08/image%207.png)
@@ -584,6 +587,7 @@ private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>(1
 B只能从第三级缓存中获取A
 
 3、那么此时就去三级缓存中调用 `getObject()` 方法去获取 A 的 **前期暴露的对象** ,也就是调用上边加入的 `getEarlyBeanReference()` 方法，生成一个 A 的 **前期暴露对象**；
+
 4、然后就将这个 `ObjectFactory` 从三级缓存中移除，**并且将前期暴露对象放入到二级缓存中，那么 B 就将这个前期暴露对象注入到依赖，来支持循环依赖。**
 
 ![其实这里调用了AOP，二级缓存中生成A对象的代理，注入到B中，然后将三级缓存中的对象移除](Spring%20101e74500164808292f0d49a46528c08/image%209.png)
@@ -592,7 +596,7 @@ B只能从第三级缓存中获取A
 
 ![结B的创建过程，此时B已经被创建，放于一级缓存中](Spring%20101e74500164808292f0d49a46528c08/image%2010.png)
 
-结B的创建过程，此时B已经被创建，放于一级缓存中
+此时B已经被创建，放于一级缓存中
 
 总结：如果发生循环依赖的话，就去 **三级缓存 `singletonFactories`** 中拿到三级缓存中存储的 `ObjectFactory` 并调用它的 `getObject()` 方法来获取这个循环依赖对象的**前期暴露对象（虽然还没初始化完成，但是可以拿到该对象在堆中的存储地址了）**，并且将这个前期暴露对象放到二级缓存中，这样在循环依赖时，就不会重复初始化了！
 
@@ -604,11 +608,14 @@ B只能从第三级缓存中获取A
 
 只有【第三种方式】的循环依赖问题被 Spring 解决了，其他两种方式在遇到循环依赖问题时，Spring都会产生异常。
 
-Spring 解决**单例模式（一定要是单例模式！！！）**下的setter循环依赖问题的主要方式是通过三级缓存解决循环依赖。三级缓存指的是 Spring 在创建 Bean 的过程中，通过三级缓存来缓存正在创建的 Bean，以及已经创建完成的 Bean 实例。具体步骤如下：
+Spring 解决**单例模式（一定要是单例模式！！！）** 下的setter循环依赖问题的主要方式是通过三级缓存解决循环依赖。三级缓存指的是 Spring 在创建 Bean 的过程中，通过三级缓存来缓存正在创建的 Bean，以及已经创建完成的 Bean 实例。具体步骤如下：
 
 1. **实例化 Bean**：Spring 在实例化 Bean 时，会先创建一个空的 Bean 对象，并将其放入一级缓存中。
+
 2. **属性赋值**：Spring 开始对 Bean 进行属性赋值，如果发现循环依赖，会将当前 Bean 对象提前暴露给后续需要依赖的 Bean（通过提前暴露的方式解决循环依赖）。
+
 3. **初始化 Bean**：完成属性赋值后，Spring 将 Bean 进行初始化，并将其放入二级缓存中。
+
 4. **注入依赖**：Spring 继续对 Bean 进行依赖注入，如果发现循环依赖，会从二级缓存中获取已经完成初始化的 Bean 实例。
 
 通过三级缓存的机制，Spring 能够在处理循环依赖时，确保及时暴露正在创建的 Bean 对象，并能够正确地注入已经初始化的 Bean 实例，从而解决循环依赖问题，保证应用程序的正常运行。
@@ -618,15 +625,25 @@ Spring 解决**单例模式（一定要是单例模式！！！）**下的setter
 ![Untitled](Spring%20101e74500164808292f0d49a46528c08/Untitled.jpeg)
 
 1. 用户发送请求至前端控制器**DispatcherServlet。**
+
 2. **DispatcherServlet**收到请求调用处理器映射器HandlerMapping。
+
 3. 处理器映射器**根据请求url找到具体的处理器**，生成处理器执行链HandlerExecutionChain(包括处理器对象和处理器拦截器)一并返回给**DispatcherServlet**。
+
 4. DispatcherServlet根据处理器Handler获取处理器适配器**HandlerAdapter执行HandlerAdapter处理一系列的操作，如：参数封装，数据格式转换，数据验证等操作**
+
 5. 执行处理器Handler(Controller，也叫页面控制器)。
+
 6. Handler执行完成返回 ModelAndView。
+
 7. HandlerAdapter 将 Handler 执行结果 ModelAndView 返回到 DispatcherServlet。
+
 8. DispatcherServlet 将 ModelAndView   传给ViewReslover**视图解析器。**
+
 9. ViewReslover解析后**返回具体View。**
+
 10. **DispatcherServlet**对**View进行渲染视图（即将模型数据model填充至视图中）**。
+
 11. **DispatcherServlet**响应用户。
 
 ---
@@ -695,9 +712,9 @@ afterCompletion：在请求完成之后执行（视图渲染之后）。
 
 ### 拦截器与过滤器区别（重点！）
 
-**1、归属层级不同：**过滤器（Filter）是Servlet规范的一部分，拦截器(Interceptor)是Spring框架中的一部分。
+**1、归属层级不同：** 过滤器（Filter）是Servlet规范的一部分，拦截器(Interceptor)是Spring框架中的一部分。
 
-**2、作用范围：**过滤器：在请求进入Servlet之前和响应返回客户端之前，对所有请求生效（包括静态资源）。
+**2、作用范围：** 过滤器：在请求进入Servlet之前和响应返回客户端之前，对所有请求生效（包括静态资源）。
 
 拦截器：在进**入Controller之前和视图渲染之前，只对Spring MVC处理的请求生效。**
 
@@ -707,7 +724,7 @@ afterCompletion：在请求完成之后执行（视图渲染之后）。
 
 Spring支持事务管理—-实际是**通过 AOP** 实现（基于**`@Transactional`** 的全注解方式使用最多）
 
-**具体实现过程：**如果加了@Transactional注解，则会利用**事务管理器**创建一个数据库连接。并且修改数据库连接的autocommit属性为false。禁止此连接的自动提交。
+**具体实现过程：** 如果加了@Transactional注解，则会利用**事务管理器**创建一个数据库连接。并且修改数据库连接的autocommit属性为false。禁止此连接的自动提交。
 
 然后执行当前方法，方法中会执行SQL，执行完当前方法后，如果没有出现异常就直接提交事务，如果出现了异常，并且这个异常是需要回滚的就会回滚事务，否则仍然提交事务。
 
@@ -790,7 +807,7 @@ Spring事务管理机制与数据库的事务支持相结合。
 
 ### Step1 、事务管理器的介入
 
-当你在方法上添加 @Transactional 注解时，**Spring 的事务管理器（如 DataSourceTransactionManager）会接管事务的创建、提交和回滚。**Spring 通过 AOP（面向切面编程）在方法调用前后织入事务管理逻辑
+当你在方法上添加 @Transactional 注解时，**Spring 的事务管理器（如 DataSourceTransactionManager）会接管事务的创建、提交和回滚。** Spring 通过 AOP（面向切面编程）在方法调用前后织入事务管理逻辑
 
 ### Step2、 **事务的开启**
 
